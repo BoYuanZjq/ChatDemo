@@ -8,6 +8,13 @@
 
 #import "UUMessageFrame.h"
 #import "UUMessage.h"
+#import "XMFaceManager.h"
+
+@interface UUMessageFrame()
+
+@property (nonatomic,strong) NSDictionary *textStyle;
+
+@end
 
 @implementation UUMessageFrame
 
@@ -20,6 +27,8 @@
     // 1、计算时间的位置
     if (_showTime){
         CGFloat timeY = ChatMargin;
+
+        
         CGSize timeSize = [_message.strTime sizeWithFont:ChatTimeFont constrainedToSize:CGSizeMake(300, 100) lineBreakMode:NSLineBreakByWordWrapping];
 
         CGFloat timeX = (screenW - timeSize.width) / 2;
@@ -46,8 +55,11 @@
     CGSize contentSize;
     switch (_message.type) {
         case UUMessageTypeText:
-            contentSize = [_message.strContent sizeWithFont:ChatContentFont  constrainedToSize:CGSizeMake(ChatContentW, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping];
- 
+        {
+            NSMutableAttributedString *attrS = [XMFaceManager emotionStrWithString:_message.strContent];
+            [attrS addAttributes:self.textStyle range:NSMakeRange(0, attrS.length)];
+          contentSize =  [attrS boundingRectWithSize:CGSizeMake(ChatContentW, CGFLOAT_MAX) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil].size;
+        }
             break;
         case UUMessageTypePicture:
             contentSize = CGSizeMake(ChatPicWH, ChatPicWH);
@@ -70,5 +82,23 @@
     _cellHeight = MAX(CGRectGetMaxY(_contentF), CGRectGetMaxY(_nameF))  + ChatMargin;
     
 }
+- (NSDictionary *)textStyle {
+    if (!_textStyle) {
+        UIFont *font = [UIFont systemFontOfSize:14];
+        NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+        style.paragraphSpacing = 0.15 * font.lineHeight;
+        style.hyphenationFactor = 1.0;
+        style.lineBreakMode = NSLineBreakByWordWrapping;
+        style.alignment = NSTextAlignmentCenter;
+        _textStyle = @{
+                                NSFontAttributeName: font,
+                                NSParagraphStyleAttributeName: style,
+                                NSForegroundColorAttributeName: [UIColor blackColor]
+                                };
+    }
+    return _textStyle;
+    
+}
+
 
 @end

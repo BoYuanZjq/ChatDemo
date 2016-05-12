@@ -13,6 +13,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "UIButton+AFNetworking.h"
 #import "UUImageAvatarBrowser.h"
+#import "XMFaceManager.h"
 
 @interface UUMessageCell ()<UUAVAudioPlayerDelegate>
 {
@@ -25,6 +26,7 @@
     UIView *headImageBackView;
     BOOL contentVoiceIsPlaying;
 }
+@property (nonatomic, strong)NSDictionary *textStyle;
 @end
 
 @implementation UUMessageCell
@@ -215,7 +217,12 @@
 
     switch (message.type) {
         case UUMessageTypeText:
-            [self.btnContent setTitle:message.strContent forState:UIControlStateNormal];
+        {
+            NSMutableAttributedString *attrS = [XMFaceManager emotionStrWithString:message.strContent];
+            [attrS addAttributes:self.textStyle range:NSMakeRange(0, attrS.length)];
+            [self.btnContent setAttributedTitle:attrS forState:UIControlStateNormal];
+        }
+           // [self.btnContent setTitle:message.strContent forState:UIControlStateNormal];
             break;
         case UUMessageTypePicture:
         {
@@ -249,6 +256,24 @@
         default:
             break;
     }
+}
+
+- (NSDictionary *)textStyle {
+    if (!_textStyle) {
+        UIFont *font = [UIFont systemFontOfSize:14];
+        NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+        style.paragraphSpacing = 0.15 * font.lineHeight;
+        style.hyphenationFactor = 1.0;
+        style.lineBreakMode = NSLineBreakByWordWrapping;
+        style.alignment = NSTextAlignmentCenter;
+        _textStyle = @{
+                                NSFontAttributeName: font,
+                                NSParagraphStyleAttributeName: style,
+                                NSForegroundColorAttributeName: [UIColor blackColor]
+                                };
+    }
+    return _textStyle;
+    
 }
 
 - (void)makeMaskView:(UIView *)view withImage:(UIImage *)image
