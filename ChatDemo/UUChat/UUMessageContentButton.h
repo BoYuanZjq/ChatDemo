@@ -13,6 +13,7 @@
 //bubble imgae
 @property (nonatomic, strong) UIImageView *backImageView;
 
+@property (nonatomic, strong) NSString *messageStr;
 //bubble location
 @property (nonatomic, strong) UILabel *addressLabel;
 

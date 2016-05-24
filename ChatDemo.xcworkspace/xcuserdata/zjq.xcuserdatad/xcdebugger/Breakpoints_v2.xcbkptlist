@@ -151,38 +151,38 @@
             endingLineNumber = "130"
             landmarkName = "-emojiDictForKey:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[MLEmojiLabelRegexPlistManager emojiDictForKey:]"
-                  moduleName = "ChatDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zjq/Documents/GitFinder/MyGitHub/ChatDemo/ChatDemo/ChatDemo/OtherSource/inputBar/Helpers/MLEmojiLabel.m"
-                  timestampString = "484712660.999999"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "2062">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[MLEmojiLabelRegexPlistManager emojiDictForKey:]"
-                  moduleName = "ChatDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zjq/Documents/GitFinder/MyGitHub/ChatDemo/ChatDemo/ChatDemo/OtherSource/inputBar/Helpers/MLEmojiLabel.m"
-                  timestampString = "484712661.000203"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "2088">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatDemo/OtherSource/inputBar/XMChatFaceView.m"
+            timestampString = "485750011.594715"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "-swipeView:viewForItemAtIndex:reusingView:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatDemo/OtherSource/inputBar/XMChatFaceView.m"
+            timestampString = "485750220.197811"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "-setupEmojiFaces"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

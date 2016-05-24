@@ -9,7 +9,6 @@
 #import "XMChatBar.h"
 
 #import "XMLocationController.h"
-
 #import "XMChatMoreView.h"
 #import "XMChatFaceView.h"
 #import "XMProgressHUD.h"

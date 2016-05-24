@@ -108,7 +108,13 @@
 
 -(void)copy:(id)sender{
     UIPasteboard *pboard = [UIPasteboard generalPasteboard];
-    pboard.string = self.titleLabel.text;
+    
+    pboard.string = self.messageStr;
+//    NSLog(@"%@",self.titleLabel.text);
+//    if (pboard.string.length==0 || !pboard.string) {
+//        pboard.string = [self.titleLabel.attributedText string];
+//    }
+    NSLog(@"%@",pboard.string);
 }
 
 

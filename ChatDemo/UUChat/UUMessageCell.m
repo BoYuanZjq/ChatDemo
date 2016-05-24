@@ -221,6 +221,7 @@
             NSMutableAttributedString *attrS = [XMFaceManager emotionStrWithString:message.strContent];
             [attrS addAttributes:self.textStyle range:NSMakeRange(0, attrS.length)];
             [self.btnContent setAttributedTitle:attrS forState:UIControlStateNormal];
+            self.btnContent.messageStr = message.strContent;
         }
            // [self.btnContent setTitle:message.strContent forState:UIControlStateNormal];
             break;

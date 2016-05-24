@@ -113,7 +113,7 @@
     self.maxRows = 2;
     self.columnPerRow = 4;
     self.pageCount = 1;
-    
+    self.pageControl.numberOfPages = 1;
     [self.faceArray removeAllObjects];
     [self.faceArray addObjectsFromArray:[XMFaceManager recentFaces]];
     
