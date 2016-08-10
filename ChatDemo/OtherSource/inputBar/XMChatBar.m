@@ -343,6 +343,14 @@
             [self.rootViewController presentViewController:locationNav animated:YES completion:nil];
         }
             break;
+        case XMChatMoreItemRedWallter:
+        {
+            if (self.delegate && [self.delegate respondsToSelector:@selector(chatBar:redWallertID:withSubTitle:)]) {
+                [self.delegate chatBar:self redWallertID:@"123443" withSubTitle:@"好人有好报"];
+            }
+        }
+            break;
+            
         default:
             break;
     }
@@ -350,11 +358,11 @@
 }
 
 - (NSArray *)titlesOfMoreView:(XMChatMoreView *)moreView{
-    return @[@"拍摄",@"照片",@"位置"];
+    return @[@"拍摄",@"照片",@"位置",@"红包"];
 }
 
 - (NSArray *)imageNamesOfMoreView:(XMChatMoreView *)moreView{
-    return @[@"chat_bar_icons_camera",@"chat_bar_icons_pic",@"chat_bar_icons_location"];
+    return @[@"chat_bar_icons_camera",@"chat_bar_icons_pic",@"chat_bar_icons_location",@"chat_bar_icons_location"];
 }
 
 #pragma mark - XMChatFaceViewDelegate

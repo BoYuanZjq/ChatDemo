@@ -10,4 +10,6 @@
 
 @interface ChatViewController : UIViewController
 
+- (void)sendRedWalter;
+
 @end

@@ -12,7 +12,6 @@
 #import "ChatModel.h"
 #import "UUMessageFrame.h"
 #import "UUMessage.h"
-//#import "DXMessageToolBar.h"
 #import "XMChatBar.h"
 
 
@@ -53,7 +52,6 @@
     [self.tableView reloadData];
     [self tableViewScrollToBottom];
 }
-
 
 #pragma mark - private method
 - (void)addRefreshViews
@@ -170,7 +168,11 @@
                           @"type": @(UUMessageTypeVoice)};
     [self dealTheFunctionData:dic];
 }
-
+- (void)chatBar:(XMChatBar *)chatBar redWallertID:(NSString*)wallertID withSubTitle:(NSString*)subTitle {
+    NSDictionary *dic = @{@"strSubTitle": subTitle,
+                          @"type": @(UUMessageTypeRedWallet)};
+    [self dealTheFunctionData:dic];
+}
 - (void)chatBar:(XMChatBar *)chatBar sendPictures:(NSArray *)pictures{
     
     NSDictionary *dic = @{@"picture": [pictures firstObject],
@@ -197,7 +199,17 @@
     } completion:nil];
 }
 
+#pragma mark - UUMessageCellDelegate
+- (void)headImageDidClick:(UUMessageCell *)cell userId:(NSString *)userId {
+    
+}
 
+- (void)cellContentDidClick:(UUMessageCell *)cell image:(UIImage *)contentImage {
+    
+}
+- (void)cellLocationDidClick:(UUMessageCell*)cell latitude:(double)latitude longitude:(double)longitude {
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -70,6 +70,9 @@
         case UUMessageTypeLocation:
             contentSize = CGSizeMake(ChatLocationWidth, ChatLocationHeight);
             break;
+        case UUMessageTypeRedWallet:
+            contentSize = CGSizeMake(ChatContentW, ChatContentW/2);
+            break;
             
         default:
             break;

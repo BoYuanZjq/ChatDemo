@@ -16,7 +16,7 @@
 
 @implementation ViewController
 - (IBAction)chat:(id)sender {
-  //  RootViewController *root = [[RootViewController alloc]init];
+//   RootViewController *root = [[RootViewController alloc]init];
     ChatViewController *root = [[ChatViewController alloc]init];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:root];
     [self presentViewController:nav animated:YES completion:nil];

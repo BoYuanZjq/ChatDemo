@@ -131,7 +131,9 @@
     // show location map
     else if (self.messageFrame.message.type == UUMessageTypeLocation)
     {
-        
+        if (self.delegate && [self.delegate respondsToSelector:@selector(cellLocationDidClick:latitude:longitude:)]) {
+            [self.delegate cellLocationDidClick:self latitude:self.messageFrame.message.latitude longitude:self.messageFrame.message.longitude];
+        }
     }
 }
 
@@ -186,6 +188,7 @@
     
     //prepare for reuse
     [self.btnContent setTitle:@"" forState:UIControlStateNormal];
+    [self.btnContent setAttributedTitle:nil forState:UIControlStateNormal];
     self.btnContent.voiceBackView.hidden = YES;
     self.btnContent.backImageView.hidden = YES;
     self.btnContent.addressLabel.hidden = YES;
@@ -227,6 +230,8 @@
             break;
         case UUMessageTypePicture:
         {
+            [self.btnContent setTitle:@"" forState:UIControlStateNormal];
+            
             self.btnContent.backImageView.hidden = NO;
             self.btnContent.backImageView.image = message.picture;
             self.btnContent.backImageView.frame = CGRectMake(0, 0, self.btnContent.frame.size.width, self.btnContent.frame.size.height);
@@ -235,6 +240,8 @@
             break;
         case UUMessageTypeVoice:
         {
+            [self.btnContent setTitle:@"" forState:UIControlStateNormal];
+            
             self.btnContent.voiceBackView.hidden = NO;
             self.btnContent.second.text = [NSString stringWithFormat:@"%@'s Voice",message.strVoiceTime];
             songData = message.voice;
@@ -243,10 +250,24 @@
             break;
         case UUMessageTypeLocation:
         {
+            [self.btnContent setTitle:@"" forState:UIControlStateNormal];
              self.btnContent.backImageView.hidden = NO;
              self.btnContent.backImageView.image = [UIImage imageNamed:@"chat_location_preview"];
              self.btnContent.backImageView.frame = CGRectMake(0, 0, self.btnContent.frame.size.width, self.btnContent.frame.size.height);
              [self makeMaskView:self.btnContent.backImageView withImage:normal];
+            self.btnContent.addressLabel.hidden = NO;
+            
+            self.btnContent.addressLabel.text = message.addressContent;
+            self.btnContent.addressLabel.frame = CGRectMake(5, self.btnContent.frame.size.height/3*2, self.btnContent.frame.size.width - 20, self.btnContent.frame.size.height/3);
+        }
+            break;
+        case UUMessageTypeRedWallet:
+        {
+            [self.btnContent setTitle:@"" forState:UIControlStateNormal];
+            self.btnContent.backImageView.hidden = NO;
+            self.btnContent.backImageView.image = [UIImage imageNamed:@"chat_location_preview"];
+            self.btnContent.backImageView.frame = CGRectMake(0, 0, self.btnContent.frame.size.width, self.btnContent.frame.size.height);
+            [self makeMaskView:self.btnContent.backImageView withImage:normal];
             self.btnContent.addressLabel.hidden = NO;
             
             self.btnContent.addressLabel.text = message.addressContent;

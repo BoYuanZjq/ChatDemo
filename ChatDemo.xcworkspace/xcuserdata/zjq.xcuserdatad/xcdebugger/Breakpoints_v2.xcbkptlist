@@ -159,13 +159,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ChatDemo/OtherSource/inputBar/XMChatFaceView.m"
-            timestampString = "485750011.594715"
+            filePath = "ChatDemo/ChatViewController.m"
+            timestampString = "488185161.115889"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "-swipeView:viewForItemAtIndex:reusingView:"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "-headImageDidClick:userId:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -175,13 +175,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ChatDemo/OtherSource/inputBar/XMChatFaceView.m"
-            timestampString = "485750220.197811"
+            filePath = "ChatDemo/UUChat/UUInputFunctionView.m"
+            timestampString = "488185892.186407"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "-setupEmojiFaces"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
+            landmarkName = "-changeSendBtnWithPhoto:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatDemo/OtherSource/inputBar/Helpers/XMFaceManager.m"
+            timestampString = "492077174.257617"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "-init"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

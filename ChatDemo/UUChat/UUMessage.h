@@ -12,7 +12,8 @@ typedef NS_ENUM(NSInteger, MessageType) {
     UUMessageTypeText     = 0 , // 文字
     UUMessageTypePicture  = 1 , // 图片
     UUMessageTypeVoice    = 2 , // 语音
-    UUMessageTypeLocation = 3   // 地理位置
+    UUMessageTypeLocation = 3 ,  // 地理位置
+    UUMessageTypeRedWallet = 4  // 红包
 };
 
 

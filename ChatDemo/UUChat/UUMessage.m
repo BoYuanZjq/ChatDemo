@@ -42,6 +42,10 @@
             self.longitude = [dict[@"longitude"] doubleValue];
             self.addressContent = dict[@"strAddress"];
             break;
+        case 4:
+            self.type = UUMessageTypeRedWallet;
+            self.addressContent = dict[@"strSubTitle"];
+            break;
             
         default:
             break;

@@ -15,7 +15,7 @@
 @optional
 - (void)headImageDidClick:(UUMessageCell *)cell userId:(NSString *)userId;
 - (void)cellContentDidClick:(UUMessageCell *)cell image:(UIImage *)contentImage;
-
+- (void)cellLocationDidClick:(UUMessageCell*)cell latitude:(double)latitude longitude:(double)longitude;
 @end
 
 

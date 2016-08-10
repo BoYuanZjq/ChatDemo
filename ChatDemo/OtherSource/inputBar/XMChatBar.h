@@ -117,4 +117,14 @@ typedef void (^Completion)(void);
  */
 - (void)chatBar:(XMChatBar *)chatBar sendVoice:(NSData *)videoData seconds:(NSTimeInterval)seconds;
 
+
+/**
+ *  发送红包功能
+ *
+ *  @param chatBar   chatBar
+ *  @param wallertID 红包ID
+ *  @param subTitle  祝福语
+ */
+- (void)chatBar:(XMChatBar *)chatBar redWallertID:(NSString*)wallertID withSubTitle:(NSString*)subTitle;
+
 @end
